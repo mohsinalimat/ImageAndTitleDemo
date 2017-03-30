@@ -41,9 +41,23 @@ typedef void(^ImageAndTitleTapBlcok)();
 
 - (void)setImageLocation:(PJBImageLocation)location
                 interval:(CGFloat)interval
+                   image:(UIImage * _Nonnull)image
+          attributedText:(NSAttributedString * _Nonnull)attributedText
+                 spacing:(CGFloat)spacing
+                  inside:(BOOL)inside;
+
+- (void)setImageLocation:(PJBImageLocation)location
+                interval:(CGFloat)interval
                    image:( UIImage * _Nonnull)image
                fixedSize:(CGSize)fixedSize
           attributedText:(NSAttributedString * _Nonnull)attributedText
                  spacing:(CGFloat)spacing;
 
+- (void)setImageLocation:(PJBImageLocation)location
+                interval:(CGFloat)interval
+                   image:(UIImage * _Nonnull)image
+               fixedSize:(CGSize)fixedSize
+          attributedText:(NSAttributedString * _Nonnull)attributedText
+                 spacing:(CGFloat)spacing
+                  inside:(BOOL)inside;
 @end

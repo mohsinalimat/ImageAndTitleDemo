@@ -14,8 +14,7 @@ typedef void(^SingleTapBlock)();
 @interface UILabel (PJBAdditons)
 @property (nonatomic, copy) SingleTapBlock tapBlock;
 @property (nonatomic, strong) NSValue *clickRangeValue;
-@property (nonatomic, strong) NSTextContainer *textContainer;
-@property (nonatomic, strong) NSLayoutManager *layoutManager;
+
 - (void)addTapGestrureAction:(SingleTapBlock)tapBlock;
 
 @end

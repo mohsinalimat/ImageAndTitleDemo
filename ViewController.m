@@ -69,7 +69,8 @@
                    interval:-10
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:[[NSAttributedString alloc] initWithString:@"图片在右边 + 文字在左边"]
-                    spacing:-10];
+                    spacing:-10
+                     inside:YES];
     view4.pjTitleLabel.textColor = [UIColor whiteColor];
     view4.pjTitleLabel.font = [UIFont systemFontOfSize:12];
     view4.pjTitleLabel.numberOfLines = 2;

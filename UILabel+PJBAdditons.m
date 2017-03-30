@@ -9,6 +9,10 @@
 #import "UILabel+PJBAdditons.h"
 #import <objc/runtime.h>
 
+@interface UILabel (private)
+@property (nonatomic, strong) NSTextContainer *textContainer;
+@property (nonatomic, strong) NSLayoutManager *layoutManager;
+@end
 
 @implementation UILabel (PJBAdditons)
 

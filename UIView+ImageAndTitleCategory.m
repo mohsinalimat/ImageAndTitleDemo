@@ -47,9 +47,41 @@
 - (void)setImageLocation:(PJBImageLocation)location
                 interval:(CGFloat)interval
                    image:(UIImage * _Nonnull)image
+          attributedText:(NSAttributedString * _Nonnull)attributedText
+                 spacing:(CGFloat)spacing
+                  inside:(BOOL)inside{
+    [self setImageLocation:location
+                  interval:interval
+                     image:image
+                 fixedSize:image.size
+            attributedText:attributedText
+                   spacing:spacing
+                    inside:inside];
+}
+- (void)setImageLocation:(PJBImageLocation)location
+                interval:(CGFloat)interval
+                   image:(UIImage * _Nonnull)image
                fixedSize:(CGSize)fixedSize
           attributedText:(NSAttributedString * _Nonnull)attributedText
                  spacing:(CGFloat)spacing{
+  
+    [self setImageLocation:location
+                  interval:interval
+                     image:image
+                 fixedSize:fixedSize
+            attributedText:attributedText
+                   spacing:spacing
+                    inside:NO];
+
+}
+- (void)setImageLocation:(PJBImageLocation)location
+                interval:(CGFloat)interval
+                   image:(UIImage * _Nonnull)image
+               fixedSize:(CGSize)fixedSize
+          attributedText:(NSAttributedString * _Nonnull)attributedText
+                 spacing:(CGFloat)spacing
+                   inside:(BOOL)inside{
+
     if (!self.pjImageView) {
         self.pjImageView = [self private_getImaegView];
         [self addSubview:self.pjImageView];
@@ -61,11 +93,10 @@
     if (!self.pjTitleLabel) {
         self.pjTitleLabel = [self private_getTitleLabel];
         [self addSubview:self.pjTitleLabel];
-        [self constraintsTitleLabelLocation:location spacing:spacing];
+        [self constraintsTitleLabelLocation:location spacing:spacing inside:inside];
     }
     self.pjTitleLabel.attributedText = attributedText;
     self.labelLayoutConstraint.constant = spacing;
-
 }
 
 - (void)constraintsForImageViewLocation:(PJBImageLocation)location
@@ -118,7 +149,8 @@
 }
 
 - (void)constraintsTitleLabelLocation:(PJBImageLocation)location
-                              spacing:(CGFloat)spacing{
+                              spacing:(CGFloat)spacing
+                               inside:(BOOL)inside{
     
     // center subTitleLabel vertically in self
     switch (location) {
@@ -129,7 +161,9 @@
             //Center
             [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.pjImageView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
             //width
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+            if (inside) {
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+            }
             [self addConstraint:self.labelLayoutConstraint];
         }
             break;
@@ -140,8 +174,9 @@
             //Center
             [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.pjImageView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
             //Right
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
-            [self addConstraint:self.labelLayoutConstraint];
+            if (inside) {
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1.0 constant:0.0]];
+            }
             
             [self addConstraint:self.labelLayoutConstraint];
         }
@@ -154,7 +189,10 @@
             //Center
             [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.pjImageView attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0.0]];
             //width
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+            if (inside) {
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0.0]];
+            }
+            
             [self addConstraint:self.labelLayoutConstraint];
         }
             break;
@@ -166,7 +204,9 @@
             //Center
             [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.pjImageView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
             //Left
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
+            if (inside) {
+                [self addConstraint:[NSLayoutConstraint constraintWithItem:self.pjTitleLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0]];
+            }
             [self addConstraint:self.labelLayoutConstraint];
         }
             break;
