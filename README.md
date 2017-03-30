@@ -1,2 +1,2 @@
 # ImageAndTitleDemo
- ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+ ![image](https://github.com/evernoteHW/ImageAndTitleDemo/blob/master/demo.png)
