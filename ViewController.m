@@ -28,10 +28,11 @@
                    interval:0
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:[[NSAttributedString alloc] initWithString:@"图片在上边 + 文字在下边"]
-                    spacing:0];
+                    spacing:0
+                     inside:YES];
     view1.pjTitleLabel.textColor = [UIColor whiteColor];
     view1.pjTitleLabel.font = [UIFont systemFontOfSize:12];
-    view1.pjTitleLabel.numberOfLines = 2;
+    view1.pjTitleLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:view1];
     
     // 图片在左边 + 文字在右边
@@ -41,10 +42,10 @@
                    interval:0
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:[[NSAttributedString alloc] initWithString:@"图片在左边 + 文字在右边"]
-                    spacing:0];
+                    spacing:0
+                     inside:YES];
     view2.pjTitleLabel.textColor = [UIColor whiteColor];
     view2.pjTitleLabel.font = [UIFont systemFontOfSize:12];
-    view2.pjTitleLabel.numberOfLines = 2;
     [self.view addSubview:view2];
     
     // 图片在下边 + 文字在上边
@@ -55,10 +56,10 @@
                    interval:0
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:[[NSAttributedString alloc] initWithString:@"图片在下边 + 文字在上边"]
-                    spacing:0];
+                    spacing:0
+                     inside:YES];
     view3.pjTitleLabel.textColor = [UIColor whiteColor];
     view3.pjTitleLabel.font = [UIFont systemFontOfSize:12];
-    view3.pjTitleLabel.numberOfLines = 2;
     [self.view addSubview:view3];
     
     // 图片在右边 + 文字在左边
@@ -105,15 +106,19 @@
     model3.textColor = [UIColor redColor];
     
     [attributedText setDirection:AttributeDirectionHorizontal
-                layoutModelArray:@[model1,model2,model3]
-                         spacing:10
-                       alignment:NSTextAlignmentCenter];
+                layoutModelArray:@[model1,model2,model3]];
     
     [view5 setImageLocation:PJBImageLocationCenterLeft
                    interval:0
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:attributedText
                     spacing:0];
+    
+    
+    view5.pjTitleLabel.clickRangeValue = [NSValue valueWithRange:NSMakeRange(0, model1.text.length)];
+    [view5.pjTitleLabel addTapGestrureAction:^{
+        NSLog(@"......");
+    }];
     
     [self.view addSubview:view5];
     
@@ -155,6 +160,7 @@
              attributedText:attributedText1
                     spacing:0
                      inside:YES];
+    
     
     [self.view addSubview:view6];
     
@@ -199,10 +205,6 @@
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:attributedText2
                     spacing:0];
-    view7.pjTitleLabel.clickRangeValue = [NSValue valueWithRange:NSMakeRange(0, 5)];
-    [view7.pjTitleLabel addTapGestrureAction:^{
-        NSLog(@"......");
-    }];
     
     [self.view addSubview:view7];
     
