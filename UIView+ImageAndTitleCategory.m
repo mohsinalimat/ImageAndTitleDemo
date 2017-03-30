@@ -62,7 +62,6 @@
         self.pjTitleLabel = [self private_getTitleLabel];
         [self addSubview:self.pjTitleLabel];
         [self constraintsTitleLabelLocation:location spacing:spacing];
-   
     }
     self.pjTitleLabel.attributedText = attributedText;
     self.labelLayoutConstraint.constant = spacing;

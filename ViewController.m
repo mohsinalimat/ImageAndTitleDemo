@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "UIView+ImageAndTitleCategory.h"
 #import "NSMutableAttributedString+PJBAdditions.h"
+#import "UILabel+PJBAdditons.h"
 
 @interface ViewController ()
 
@@ -200,6 +201,10 @@
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:attributedText2
                     spacing:0];
+    view7.pjTitleLabel.clickRangeValue = [NSValue valueWithRange:NSMakeRange(0, 5)];
+    [view7.pjTitleLabel addTapGestrureAction:^{
+        NSLog(@"......");
+    }];
     
     [self.view addSubview:view7];
     
