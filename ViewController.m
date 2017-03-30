@@ -145,11 +145,7 @@
     model6.textSpacing = 20;
     model6.textAlignment = NSTextAlignmentRight;
     
-    
-//    [attributedText1 setDirection:AttributeDirectionVertical
-//                layoutModelArray:@[model4,model5,model6]
-//                         spacing:10
-//                       alignment:NSTextAlignmentCenter];
+
     [attributedText1 setDirection:AttributeDirectionVertical
                  layoutModelArray:@[model4,model5,model6]];
     
@@ -157,7 +153,8 @@
                    interval:0
                       image:[UIImage imageNamed:@"ICON"]
              attributedText:attributedText1
-                    spacing:0];
+                    spacing:0
+                     inside:YES];
     
     [self.view addSubview:view6];
     
