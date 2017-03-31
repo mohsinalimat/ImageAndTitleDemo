@@ -2,9 +2,10 @@
  1 例子效果
  ![image](https://github.com/evernoteHW/ImageAndTitleDemo/blob/master/demo.png)
  2 如何使用 
- 1 代码拖入
- 2 CocosPod
- pod 'ImageViewAndTitle', '~0.0.1'
+<h1> 1 代码拖入<h1>
+ 
+ <h1>2 CocosPod<h1>
+ <br />pod 'ImageViewAndTitle', '~0.0.1'
  
  // 图片在上边 + 文字在下边
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(4, 20, 100, 80)];
