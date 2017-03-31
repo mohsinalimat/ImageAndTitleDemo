@@ -2,6 +2,9 @@
  1 例子效果
  ![image](https://github.com/evernoteHW/ImageAndTitleDemo/blob/master/demo.png)
  2 如何使用 
+ pod 'ImageViewAndTitle', '~0.0.2'
+ 
+ 
  // 图片在上边 + 文字在下边
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(4, 20, 100, 80)];
     view1.backgroundColor = [UIColor orangeColor];
