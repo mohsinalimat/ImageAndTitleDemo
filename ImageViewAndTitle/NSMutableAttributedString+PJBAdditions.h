@@ -27,18 +27,6 @@
              textSpacing:(CGFloat)textSpacing
           textAlignment :(CGFloat)textAlignment;
 
-//@property(NS_NONATOMIC_IOSONLY) CGFloat lineSpacing;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat paragraphSpacing;
-//@property(NS_NONATOMIC_IOSONLY) NSTextAlignment alignment;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat firstLineHeadIndent;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat headIndent;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat tailIndent;
-//@property(NS_NONATOMIC_IOSONLY) NSLineBreakMode lineBreakMode;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat minimumLineHeight;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat maximumLineHeight;
-//@property(NS_NONATOMIC_IOSONLY) NSWritingDirection baseWritingDirection;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat lineHeightMultiple;
-//@property(NS_NONATOMIC_IOSONLY) CGFloat paragraphSpacingBefore;
 
 @end
 
@@ -70,31 +58,31 @@ typedef NS_ENUM(NSInteger, AttributeDirection) {
                                     subTitleFont:(UIFont *)subTitleFont
                                    subTitleColor:(UIColor *)subTitleColor;
 
--  (void)setDirection:(AttributeDirection)direction
-      mainTitleString:(NSString *)mainTitleString
-        mainTitleFont:(UIFont *)mainTitleFont
-       mainTitleColor:(UIColor *)mainTitleColor
-       subTitleString:(NSString *)subTitleString
-         subTitleFont:(UIFont *)subTitleFont
-        subTitleColor:(UIColor *)subTitleColor;
+- (void)setDirection:(AttributeDirection)direction
+     mainTitleString:(NSString *)mainTitleString
+       mainTitleFont:(UIFont *)mainTitleFont
+      mainTitleColor:(UIColor *)mainTitleColor
+      subTitleString:(NSString *)subTitleString
+        subTitleFont:(UIFont *)subTitleFont
+       subTitleColor:(UIColor *)subTitleColor;
 
--  (void)setDirection:(AttributeDirection)direction
-      mainTitleString:(NSString *)mainTitleString
-        mainTitleFont:(UIFont *)mainTitleFont
-       mainTitleColor:(UIColor *)mainTitleColor
-       subTitleString:(NSString *)subTitleString
-         subTitleFont:(UIFont *)subTitleFont
-        subTitleColor:(UIColor *)subTitleColor
-            alignment:(NSTextAlignment)alignment;
+- (void)setDirection:(AttributeDirection)direction
+     mainTitleString:(NSString *)mainTitleString
+       mainTitleFont:(UIFont *)mainTitleFont
+      mainTitleColor:(UIColor *)mainTitleColor
+      subTitleString:(NSString *)subTitleString
+        subTitleFont:(UIFont *)subTitleFont
+       subTitleColor:(UIColor *)subTitleColor
+           alignment:(NSTextAlignment)alignment;
 
--  (void)setDirection:(AttributeDirection)direction
-      mainTitleString:(NSString *)mainTitleString
-        mainTitleFont:(UIFont *)mainTitleFont
-       mainTitleColor:(UIColor *)mainTitleColor
-       subTitleString:(NSString *)subTitleString
-         subTitleFont:(UIFont *)subTitleFont
-        subTitleColor:(UIColor *)subTitleColor
-              spacing:(CGFloat)spacing;
+- (void)setDirection:(AttributeDirection)direction
+     mainTitleString:(NSString *)mainTitleString
+       mainTitleFont:(UIFont *)mainTitleFont
+      mainTitleColor:(UIColor *)mainTitleColor
+      subTitleString:(NSString *)subTitleString
+        subTitleFont:(UIFont *)subTitleFont
+       subTitleColor:(UIColor *)subTitleColor
+             spacing:(CGFloat)spacing;
 
 -  (void)setDirection:(AttributeDirection)direction
       mainTitleString:(NSString *)mainTitleString
@@ -107,7 +95,11 @@ typedef NS_ENUM(NSInteger, AttributeDirection) {
             alignment:(NSTextAlignment)alignment;
 //**************************单行或者两行**************************//
 //**************************三行以上的另作处理*********************//
-- (void)setDirection:(AttributeDirection)direction layoutModelArray:(NSArray<AttributedLayoutModel *> *)layoutModelArray spacing:(CGFloat)spacing alignment:(NSTextAlignment)alignment;
-- (void)setDirection:(AttributeDirection)direction layoutModelArray:(NSArray<AttributedLayoutModel *> *)layoutModelArray;
+- (void)setDirection:(AttributeDirection)direction
+    layoutModelArray:(NSArray<AttributedLayoutModel *> *)layoutModelArray
+             spacing:(CGFloat)spacing
+           alignment:(NSTextAlignment)alignment;
+- (void)setDirection:(AttributeDirection)direction
+    layoutModelArray:(NSArray<AttributedLayoutModel *> *)layoutModelArray;
 - (void)appendAttributedLayoutModel:(AttributedLayoutModel *)layoutModel;
 @end
