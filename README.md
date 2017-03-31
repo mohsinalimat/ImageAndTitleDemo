@@ -2,7 +2,7 @@
  1 例子效果
  ![image](https://github.com/evernoteHW/ImageAndTitleDemo/blob/master/demo.png)
  2 如何使用 
- pod 'ImageViewAndTitle', '~0.0.2'
+ pod 'ImageViewAndTitle', '~0.0.1'
  
  
  // 图片在上边 + 文字在下边
