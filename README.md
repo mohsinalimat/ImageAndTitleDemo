@@ -7,6 +7,7 @@
  <h1>2 CocosPod<h1>
  <br />pod 'ImageViewAndTitle', '~0.0.1'
  
+ 
  // 图片在上边 + 文字在下边
     UIView *view1 = [[UIView alloc] initWithFrame:CGRectMake(4, 20, 100, 80)];
     view1.backgroundColor = [UIColor orangeColor];
